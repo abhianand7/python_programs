@@ -1,0 +1,28 @@
+
+
+import sys
+
+
+def boomrang(L , i):
+    n = len(L)
+    if n == 1:
+        return L
+    elif n % 2 == 0:
+        temp = n//2
+        L.remove(L[temp+i])
+        return boomrang(L, i+1)
+    else:
+        L.remove(L[i])
+        return boomrang(L, i)
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    # print (n)
+    # your code goes here
+    L = []
+    for i in range(1,n+1):
+        L.append(i)
+    #print (L)
+    i = 0
+    winner = boomrang(L,i)
+    print (winner[0])

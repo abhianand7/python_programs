@@ -1,0 +1,10 @@
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+
+gauth = GoogleAuth()
+drive = GoogleDrive(gauth)
+myfile = drive.CreateFile({'id': "1FTXLaN84KB6ra3JSTvycQb7dU9ekXUDToIg9x4MJsu0"})
+
+print (myfile['title'])  # world.png
+
+myfile.GetContentFile('Project Portal (Responses).xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')  # Save Drive file as a local file
